@@ -1,0 +1,39 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "plugins": ["stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true,
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "severity": "error",
+        "disableFix": true
+      }
+    ],
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "ignore": ["consecutive-duplicates-with-different-values"],
+        "disableFix": true
+      }
+    ],
+    "shorthand-property-no-redundant-values": [
+      true,
+      {
+        "severity": "error",
+        "disableFix": true
+      }
+    ],
+    "at-rule-no-unknown": null,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": true,
+    "no-duplicate-at-import-rules": true,
+    "block-no-empty": true,
+    "comment-no-empty": true,
+    "declaration-no-important": true,
+    "max-nesting-depth": 3,
+    "number-max-precision": 2
+  }
+}
