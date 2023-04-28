@@ -4,9 +4,9 @@
   display: grid;
   grid-template-areas:
     'menu menu'
-    'round tablo'
-    / 1fr 376px
-    auto 1fr;
+    'round tablo';
+  grid-template-columns: 1fr 376px;
+  grid-template-rows: auto 1fr;
   width: 100%;
   height: 100%;
   background-color: $color-bg;

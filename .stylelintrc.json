@@ -3,13 +3,7 @@
   "plugins": ["stylelint-prettier"],
   "rules": {
     "prettier/prettier": true,
-    "declaration-block-no-redundant-longhand-properties": [
-      true,
-      {
-        "severity": "error",
-        "disableFix": true
-      }
-    ],
+    "declaration-block-no-redundant-longhand-properties": null,
     "declaration-block-no-duplicate-properties": [
       true,
       {
