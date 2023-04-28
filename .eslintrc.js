@@ -36,7 +36,6 @@ module.exports = {
     "react/default-props-match-prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "jsx-a11y/media-has-caption": "off",
-    "import/no-absolute-path": "off",
     "no-restricted-imports": [
       "error",
       {

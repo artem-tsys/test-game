@@ -1,14 +1,14 @@
-import { FC, ReactNode } from 'react'
+import {FC, ReactNode} from 'react';
 
 type ErrorBoundaryProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
-export const ErrorBoundary: FC<ErrorBoundaryProps> = ({ children }) => {
+export const ErrorBoundary: FC<ErrorBoundaryProps> = ({children}) => {
   try {
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    return <>{children}</>
+    return <>{children}</>;
   } catch (e) {
-    return <div>error components</div>
+    return <div>error components</div>;
   }
-}
+};

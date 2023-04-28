@@ -1,0 +1,12 @@
+.border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  fill: transparent;
+  transition: fill 0.3s ease;
+  stroke: #d0d0d8;
+}

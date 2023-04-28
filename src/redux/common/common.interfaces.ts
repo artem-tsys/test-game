@@ -1,22 +1,11 @@
-export interface InitialState {
-	loadingStatus: 'idle' | 'pending' | 'completed' | 'failed'
-	error: string | null
-	questionNumber: number,
-	prices: IPrices,
-	questions: IQuestion[],
-	countQuestions: number
+import {IFetch} from '../../types/general';
+import {AnswerStatus} from '../../types/options';
+
+export interface InitialState extends IFetch {
+  questionNumber: number;
+  prices: IPrices;
+  countQuestions: number;
+  answerStatus: AnswerStatus;
 }
 
-type IPrices = Record<string, string>
-
-interface IQuestion {
-	title: string,
-	answer: string[],
-	options: string[]
-	complexity: number
-}
-
-export interface IOption {
-	id: string,
-	text: string
-}
+type IPrices = Record<number, string>;

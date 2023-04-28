@@ -1,0 +1,13 @@
+@import 'src/styles/variables';
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: $color-bg;
+}
+
+.content {
+  margin: auto 0;
+}

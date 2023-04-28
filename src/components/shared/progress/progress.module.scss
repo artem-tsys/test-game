@@ -1,0 +1,84 @@
+@import 'src/styles/variables';
+$color-text: $color-text-main;
+$color-text-active: #fdeeed;
+$color-text-disable: #d0d0d8;
+$color-border: #d0d0d8;
+$color-border-active: #3891b1;
+
+.progress {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+.step {
+  position: relative;
+  text-align: center;
+  width: 70%;
+  margin-bottom: 8px;
+  padding: 8px 24px;
+  color: $color-text;
+  z-index: 1;
+
+  svg {
+    stroke: $color-border;
+  }
+
+  &:nth-last-child {
+    margin-bottom: 0;
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 1px;
+    background-color: $color-border;
+  }
+
+  &::after {
+    right: 0;
+    transform: translate(99%, -0.5px);
+  }
+
+  &::before {
+    left: 0;
+    transform: translate(-99%, -0.5px);
+  }
+}
+
+.step.step__disable {
+  color: $color-text-disable;
+}
+
+.step.step__current {
+  color: $color-text-active;
+
+  svg {
+    stroke: $color-border-active;
+    fill: $color-border-active;
+  }
+
+  &::after,
+  &::before {
+    background-color: $color-border-active;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .step {
+    width: 70%;
+    padding: 8px 20px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .step {
+    width: 80%;
+    padding: 8px 24px;
+  }
+}

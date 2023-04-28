@@ -1,0 +1,140 @@
+@import '../../../../styles/variables';
+@import '../game.module';
+
+$color-fill: $white;
+$color-stroke: #d0d0d8;
+$color-fill-hover: $white;
+$color-stroke-hover: #1e6a8e;
+$color-fill-selected: #fff3eb;
+$color-stroke-selected: #ff8b37;
+$color-fill-wrong: #fdeeed;
+$color-stroke-wrong: #ec6259;
+$color-fill-correct: #e6faea;
+$color-stroke-correct: #47d867;
+
+$color-letter: #3891b1;
+$color-letter-hover: #3891b1;
+
+.button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
+  padding: 24px 32px;
+  background: none;
+  line-height: 1.2em;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 50%;
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 1px;
+    background-color: $color-stroke;
+  }
+
+  &::after {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &::before {
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  svg {
+    stroke: $color-stroke;
+    fill: $color-fill;
+  }
+}
+
+.button:hover {
+  svg {
+    stroke: $color-stroke-hover;
+    fill: $color-fill-hover;
+  }
+
+  &::after,
+  &::before {
+    background-color: $color-stroke-hover;
+  }
+
+  .letter {
+    color: $color-letter-hover;
+  }
+}
+
+.button.button_selected {
+  svg {
+    stroke: $color-stroke-selected;
+    fill: $color-fill-selected;
+  }
+
+  &::after,
+  &::before {
+    background-color: $color-stroke-selected;
+  }
+}
+
+.button.button_correct {
+  svg {
+    stroke: $color-stroke-correct;
+    fill: $color-fill-correct;
+  }
+
+  &::after,
+  &::before {
+    background-color: $color-stroke-correct;
+  }
+}
+
+.button.button_wrong {
+  svg {
+    stroke: $color-stroke-wrong;
+    fill: $color-fill-wrong;
+  }
+
+  &::after,
+  &::before {
+    background-color: $color-stroke-wrong;
+  }
+}
+
+.letter {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.16em;
+  color: $color-letter;
+  text-transform: capitalize;
+  margin-right: 8px;
+  transition: color 300ms ease-in-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .letter {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .letter {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .button {
+    padding: 20px 24px;
+  }
+}

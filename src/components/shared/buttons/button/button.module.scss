@@ -1,0 +1,39 @@
+@import './src/styles/variables';
+$color-bg: #1e6a8e;
+$color-bg-hover: #3891b1;
+$color-bg-focus: #003b63;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  border: none;
+  background-color: $color-bg;
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 116%;
+  padding: 20px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  color: $white;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $color-bg-hover;
+  }
+
+  &:active {
+    background-color: $color-bg-focus;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    padding: 16px 24px;
+  }
+}

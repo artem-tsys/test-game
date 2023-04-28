@@ -1,5 +1,3 @@
-import React from "react";
+import {GameStart} from '../components/pages/gameStart/gameStart';
 
-const Greeting = (): JSX.Element => <p>welcome</p>
-
-export default Greeting;
+export default GameStart;

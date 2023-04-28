@@ -1,0 +1,33 @@
+@import 'src/styles/variables';
+
+.button {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    height: 2px;
+    width: 90%;
+    border-radius: 12px;
+    background: $black;
+    z-index: 1;
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

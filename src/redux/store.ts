@@ -1,16 +1,18 @@
 import {configureStore, ThunkAction, Action} from '@reduxjs/toolkit';
-import {commonMiddleware} from 'src/redux/common/common.middleware';
-import {commonSlice} from 'src/redux/common/common.slice';
-import { modalSlice } from "src/redux/modal/modal.slice";
+import {commonSlice} from './common/common.slice';
+import {modalSlice} from './modal/modal.slice';
+import {optionsSlice} from './options/options.slice';
+import {questionSlice} from './questions/question.slice';
 
 export const createConfigureStore = (initState = {}) =>
   configureStore({
     reducer: {
       common: commonSlice.reducer,
+      question: questionSlice.reducer,
+      options: optionsSlice.reducer,
       modal: modalSlice.reducer,
     },
     preloadedState: initState,
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat([commonMiddleware]),
   });
 
 export const store = createConfigureStore();
